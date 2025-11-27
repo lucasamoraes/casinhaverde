@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escola Infantil Casinha Verde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'casinha-green': '#54D1C5',
+              'casinha-light-green': '#7EE0C8',
+              'casinha-leaf': '#2E7D32',
+              'casinha-red': '#E04646',
+              'casinha-brown': '#7A4C31',
+            },
+            fontFamily: {
+              'display': ['"Baloo 2"', 'cursive'],
+              'body': ['"Nunito"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+        color: #7A4C31;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Baloo 2', cursive;
+      }
+      
+      .house-container {
+        perspective: 1000px;
+      }
+      .door {
+        transform-origin: 0% 50%;
+        transition: transform 1.5s ease-in-out;
+        transform-style: preserve-3d;
+      }
+      .door-right {
+        transform-origin: 100% 50%;
+      }
+      .house-container:hover .door-left, .house-open .door-left {
+        transform: rotateY(-110deg);
+      }
+      .house-container:hover .door-right, .house-open .door-right {
+        transform: rotateY(110deg);
+      }
+      
+      .scroll-hidden::-webkit-scrollbar {
+        display: none;
+      }
+      .scroll-hidden {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
